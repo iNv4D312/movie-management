@@ -1,0 +1,22 @@
+<nav class="navbar">
+    <div class="nav-left">
+        <img [src]="'http://127.0.0.1:8000/media/assets/logo.png'" alt="Notflix Logo" class="logo">
+    </div>
+
+    <div class="nav-right">
+        <!-- <input *ngIf="isLoggedIn" type="text" class="search-box" placeholder="Search"> -->
+        <img *ngIf="isLoggedIn" [src]="'http://127.0.0.1:8000/media/assets/profile-icon.jpg'" alt="Profile" class="profile-icon" (click)="goToEditMovie()" (mouseenter)="showTooltip('profile')" (mouseleave)="hideTooltip()">
+        <span *ngIf="isLoggedIn" class="username" (click)="goToUploadMovie()" (mouseenter)="showTooltip('username')" (mouseleave)="hideTooltip()">{{ username }}
+        </span>
+        
+        <!-- Tooltip Display -->
+        <div *ngIf="tooltipText" class="tooltip">{{ tooltipText }}</div>
+
+        <ul class="nav-links">
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/movies">Movies</a></li>
+            <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
+            <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
+        </ul>
+    </div>
+</nav>

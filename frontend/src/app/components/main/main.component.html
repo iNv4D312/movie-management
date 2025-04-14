@@ -1,0 +1,41 @@
+<div>
+  <main *ngIf="showHomeSection">
+    <section class="hero">
+      <h1>Unlimited Movies, Anytime, Anywhere</h1>
+      <p>Stream your favorite films, discover new titles, and enjoy high-quality entertainment all in one place.</p>
+      <button routerLink="/movies" class="cta-button">Start Watching</button>
+    </section>
+  
+    <section class="trending" #trendingSection>
+      <h2>Trending Now</h2>
+      <button class="scroll-button left" (click)="scrollLeft()">&#9664;</button>
+      <div class="trending-grid">
+        <div style="display: flex; gap: 1rem; position: relative;">
+          <div class="movie" *ngFor="let movie of movies" (click)="openMoviePopup(movie)">
+            <img [src]="movie.thumbnail" alt="{{movie.title}}" />
+            <p>{{ movie.title }}</p>
+          </div>
+        </div>
+      </div>
+      <button class="scroll-button right" (click)="scrollRight()">&#9654;</button>
+    </section>
+  
+    <!-- Movie Popup Modal -->
+    <div class="movie-popup" *ngIf="selectedMovie">
+      <div class="popup-content">
+          <div class="close">
+            <span class="close-button" (click)="closeMoviePopup()">&times;</span>
+          </div>
+          <div><img [src]="selectedMovie.thumbnail" alt="{{selectedMovie.title}}" /></div>
+          <h2>{{ selectedMovie.title }}</h2>
+          <p>{{ selectedMovie.description }}</p>
+          <button class="cta-button" (click)="startWatching()">Start Watching</button>
+      </div>
+    </div>
+  </main>
+</div>
+<div>
+  <section class="footer">
+    <app-footer></app-footer>
+  </section>
+</div>

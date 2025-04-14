@@ -1,0 +1,55 @@
+<!-- <p>movie-detail works!</p> -->
+<!-- <video #videoPlayer *ngIf="movie.video_file" controls class="movie-player">
+    <source [src]="movie.video_file" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<div class="custom-controls">
+    <button class="custom-btn" (click)="togglePlay()">Play/Pause</button>
+</div> -->
+
+<section class="movie-container">
+    <div class="background-overlay" [style.backgroundImage]="'url(' + movie.thumbnail + ')'">
+        <div class="movie-info">
+            <h1>{{ movie.title }}</h1>
+            <p class="genre">{{ movie.genre }}</p>
+            <p class="description">{{ movie.description }}</p>
+            <button class="play-button" (click)="togglePlay()">▶ Play</button>
+        </div>
+    </div>
+
+    <div class="movie-player-container" *ngIf="isPlaying">
+        <video #videoPlayer controls autoplay class="movie-player">
+            <source [src]="movie.video_file" type="video/mp4">
+        </video>
+        <button class="close-video-btn" (click)="closeVideo()">✖</button>
+    </div>
+</section>
+
+<!-- <style>
+    .movie-player-container {
+        position: relative;
+    }
+
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .movie-player-container:hover .close-button {
+        opacity: 1;
+    }
+</style> -->

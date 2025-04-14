@@ -1,0 +1,80 @@
+.edit-movie-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #141414; /* Netflix Dark Theme */
+  color: #fff;
+  border-radius: 10px;
+}
+
+.movie-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.movie-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  transition: background-color 0.2s;
+}
+
+.movie-item:hover {
+  background-color: #222; /* Slightly lighter hover effect */
+}
+
+.movie-thumbnail {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.movie-info {
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.movie-genre {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.movie-description {
+  font-size: 12px;
+  color: #ccc;
+  max-width: 500px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.edit-button:hover {
+  color: #ffcc00; /* Yellow highlight */
+  transform: scale(1.1);
+}
+
+.delete-button:hover {
+  color: #ff3e4f; /* Netflix red */
+  transform: scale(1.1);
+}
+
+.no-movies {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+  color: #888;
+}

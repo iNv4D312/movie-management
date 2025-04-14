@@ -1,0 +1,26 @@
+<div class="upload-movie-container">
+    <h2>Upload a New Movie</h2>
+
+    <form (submit)="uploadMovie($event)">
+        <label>Title:</label>
+        <input [(ngModel)]="movie.title" name="title" type="text" required>
+    
+        <label>Genre:</label>
+        <input [(ngModel)]="movie.genre" name="genre" type="text" required>
+    
+        <label>Description:</label>
+        <textarea [(ngModel)]="movie.description" name="description" required></textarea>
+    
+        <label>Thumbnail:</label>
+        <input type="file" accept="image/jpeg" (change)="onFileSelected($event, 'thumbnail')" name="thumbnail" required>
+    
+        <label>Video File:</label>
+        <input type="file" accept="video/mp4" (change)="onFileSelected($event, 'video_file')" name="video_file" required>
+    
+        <button type="submit">Upload Movie</button>
+    </form>
+
+    <div *ngIf="uploadSuccess" class="success-popup">
+        <p> Movie uploaded successfully!</p>
+    </div>
+</div>

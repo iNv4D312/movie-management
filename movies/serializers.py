@@ -5,3 +5,5 @@ class MovieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
         fields = '__all__'
+
+    video_file = serializers.FileField(required=True)

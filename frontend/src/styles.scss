@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #141414;  /* Netflix's dark theme */
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+.movie-card {
+    background: #222;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie-card:hover {
+    transform: scale(1.05); /* Netflix-style hover effect */
+}
+
+app-main {
+    padding-bottom: 80px; /* Leaves space for the footer */
+}

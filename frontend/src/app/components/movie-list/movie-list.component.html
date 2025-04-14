@@ -1,0 +1,56 @@
+<!-- <p>movie-list works!</p> -->
+
+<!-- <div *ngFor="let movie of movies">
+    <h2>{{ movie.title }}</h2>
+    <p>{{ movie.description }}</p>
+    <button (click)="editMovie(movie)">Edit</button>
+    <button (click)="deleteMovie(movie.id)">Delete</button>
+</div> -->
+
+<!-- <div class="movie-container">
+    <div *ngFor="let movie of movies" class="movie-card">
+        <img [src]="movie.thumbnail" alt="{{ movie.title }}" class="movie-thumbnail">
+        <h3>{{ movie.title }}</h3>
+        <p>{{ movie.description }}</p>
+        <button (click)="viewMovie(movie)">View Details</button>
+        <button (click)="editMovie(movie)">Edit</button>
+        <button (click)="deleteMovie(movie.id)">Delete</button>
+    </div>
+</div> -->
+
+<section class="movies-header">
+    <h2>Browse Movies</h2>
+</section>
+  
+<section class="movies-grid">
+    <div class="movie-card" *ngFor="let movie of movies" (click)="viewMovie(movie)">
+        <div class="movie-thumbnail">
+            <img [src]="movie.thumbnail" alt="{{ movie.title }}" />
+            <div class="movie-hover">
+                <h3>{{ movie.title }}</h3>
+                <p>{{ movie.genre }}</p>
+                <!-- <button class="play-btn">▶ Play</button> -->
+                <button class="play-btn" (click)="handlePlay(movie)">▶ Play</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<form *ngIf="editingMovie" (submit)="updateMovie()">
+    <h2>Edit Movie Details</h2>
+    <label>Title:</label>
+    <input type="text" [(ngModel)]="editingMovie.title" name="title">
+    
+    <label>Description:</label>
+    <textarea [(ngModel)]="editingMovie.description" name="description"></textarea>
+
+    <div class="button-group">
+        <button type="submit" class="save-btn">Save Changes</button>
+        <button type="button" class="cancel-btn" (click)="cancelEdit()">Cancel</button>  
+    </div>
+</form>
+
+
+  
+
+  

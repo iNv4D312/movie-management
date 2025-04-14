@@ -1,0 +1,137 @@
+// button {
+//   background-color: #E50914 !important;  /* Netflix Red */
+//   color: white;
+//   padding: 10px;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   transition: background 0.3s ease-in-out;
+// }
+
+// button:hover {
+//   background-color: #B20710;
+// }
+
+// .movies-header {
+//   text-align: center;
+//   margin-bottom: 20px;
+// }
+
+// .movies-header h2 {
+//   font-size: 28px;
+//   color: white;
+// }
+
+// .movies-header input {
+//   width: 60%;
+//   padding: 10px;
+//   font-size: 16px;
+//   border-radius: 5px;
+//   border: none;
+// }
+
+// .movies-grid {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));  
+//   gap: 15px;
+//   padding: 20px;
+// }
+
+// .movie-card {
+//   background: #222;
+//   border-radius: 10px;
+//   overflow: hidden;
+//   transition: transform 0.3s ease-in-out;
+// }
+
+// .movie-card img {
+//   width: 100%;
+//   height: 250px;
+// }
+
+// .movie-card .movie-info {
+//   padding: 10px;
+//   color: white;
+// }
+
+// .movie-card p {
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+// }
+
+// .movie-card:hover {
+//   transform: scale(1.05);  
+// }
+
+.movies-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+.search-box {
+  padding: 10px;
+  border-radius: 5px;
+  width: 250px;
+  border: 1px solid #ddd;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.movie-thumbnail {
+  position: relative;
+}
+
+.movie-thumbnail img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie-thumbnail:hover img {
+  transform: scale(1.1); /* Netflix-style hover effect */
+}
+
+.movie-hover {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 80%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.movie-thumbnail:hover .movie-hover {
+  opacity: 1; /* Details appear on hover */
+}
+
+.play-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.play-btn:hover {
+  background: darkred;
+}
